@@ -7,15 +7,14 @@ interface Props extends React.HTMLAttributes<HTMLSpanElement> {
   color?: keyof Color;
 }
 
-const Text: React.FC<Props> = ({
+export const Text: React.FC<Props> = ({
   fontWeight = "standard",
   fontSize = "standard",
-  color = "dark",
+  color = "light",
   children,
   ...rest
 }) => {
   const theme = useTheme();
-  useEffect(() => console.log("effect", theme), [theme]);
   return (
     <span
       style={{
@@ -29,5 +28,3 @@ const Text: React.FC<Props> = ({
     </span>
   );
 };
-
-export default Text;
